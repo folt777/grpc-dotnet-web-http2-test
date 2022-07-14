@@ -1,0 +1,17 @@
+syntax="proto3";
+package sa;
+
+option go_package="./auto;auto";
+option csharp_namespace = "ServiceAGrpc";
+
+message ID {
+    bytes id = 1;
+}
+
+message FileList {
+    repeated string list = 1;
+}
+
+service ServiceA {
+    rpc GetList(ID) returns (FileList);
+}
